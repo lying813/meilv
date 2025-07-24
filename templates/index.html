@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>美女写真馆</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>美女写真馆</h1>
+    <div class="photo-grid">
+        {% for photo in photos %}
+            <div class="photo-item">
+                <img src="{{ url_for('static', filename='photos/' + photo) }}" 
+                     alt="写真图片" loading="lazy">
+            </div>
+        {% else %}
+            <p class="empty">暂无图片</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
